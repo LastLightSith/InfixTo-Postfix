@@ -8,7 +8,7 @@ ApplicationWindow {
 	id: window
 	visible: true
 	height: 640
-	width: 480
+	width: 600
 	title: qsTr("InfixManipulator")
 
 	InfixToPostfix{id:c_interface }

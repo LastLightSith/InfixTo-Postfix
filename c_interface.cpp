@@ -11,6 +11,7 @@
 #include <sstream>
 #include <QClipboard>
 #include <QGuiApplication>
+#include <string>
 
 extern "C"{
 long double EvaluatePostfix(char *postfix);
@@ -21,6 +22,8 @@ C_interface::C_interface(QObject *parent) : QObject(parent) { }
 
 QString C_interface::toPostfix(QString infix)
 {
+	infix.remove(" ");
+
 	infix.append(' ');
 	QString posfix = InfixToPostfix(const_cast<char*>( infix.toStdString().c_str()));
 	return posfix;
